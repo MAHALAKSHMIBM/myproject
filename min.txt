@@ -1,0 +1,268 @@
+import java.lang.*;
+import java.util.Scanner;
+import java.io.*;
+class Min
+ {
+    public static void main(String[] args)
+     {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of the array:");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) 
+        {
+            arr[i] = sc.nextInt();
+        }
+
+        int min = arr[0];
+        for (int i = 0; i < n; i++) 
+        {
+            if (arr[i] < min) 
+            {
+                min = arr[i];
+            }
+        }
+
+        System.out.println("The minimum element in the array is: " + min);
+    }
+}
+//----------------------------------------------------------------------------------------------//
+class maxi 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of the array:");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) 
+        {
+            arr[i] = sc.nextInt();
+        }
+        int max = arr[0];
+        for (int i = 0; i < n; i++) 
+        {
+            if (arr[i] > max)
+             {
+                max = arr[i];
+            }
+        }
+        System.out.println("The maximum element in the array is: " + max);
+    }
+}
+//---------------------------------------------------------------------------------------------------//
+class Avg
+ {
+    public static void main(String[] args)
+     {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of the array:");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) 
+        {
+            arr[i] = sc.nextInt();
+        }
+
+        int sum = 0;
+        for (int i = 0; i < n; i++) 
+        {
+            sum += arr[i];
+        }
+           
+        int average = sum/n;
+        System.out.println("The average element in the array is: " + average);
+    }
+}
+//---------------------------------------------------------------------------------------------------//
+class Merge
+{
+    public static void main(String args[])
+    {   
+        int a[]={1, 3, 5};
+        int b[]={2, 4, 6};
+        int c[]=new int[a.length+b.length];
+        int p=0; 
+        for(int i=0;i<a.length;i++)
+        {
+          c[p] = a[i];
+          p++;
+        }
+        for(int i=0;i<b.length;i++)
+        {
+           c[p] = b[i];
+           p++;
+        }
+        for(int i:c)
+        {
+          System.out.println(i);    
+        }
+    
+    }
+}
+//---------------------------------------------------------------------------------------------------//
+class sec
+{
+    public static void main(String args[])
+    {
+        int a[]={10,12,15,8,5};
+        int temp;
+        for(int i=0;i<a.length-1;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]<a[j])
+                {
+                  temp=a[i];
+                  a[i]=a[j];
+                  a[j]=temp;  
+                }
+            }
+        }    
+            System.out.println("second largest number is : "+ a[1]);
+    }
+}
+//-----------------------------------------------------------------------------------------------//
+class sort
+{
+    public static void main(String args[])
+    {
+        int a[]={3, 1, 4, 2};
+        int temp;
+        for(int i=0;i<a.length-1;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]>a[j])
+                {
+                  temp=a[i];
+                  a[i]=a[j];
+                  a[j]=temp;  
+                }
+            }
+        }
+        for(int k=0;k<a.length;k++)
+        {
+            System.out.println(a[k]);
+        }  
+    }      
+}
+//--------------------------------------------------------------------------------------------------------//
+class count
+{
+    public static void main(String args[])
+    {
+      int a[]={12, 22, 11, 15, 10};
+      int evenc=0;
+      int oddc=0;
+      System.out.println("Even Numbers: ");
+      for(int i:a)
+      {
+        if(i%2==0)
+        {
+            evenc++;
+        }
+      }   
+      System.out.println(evenc);
+      System.out.println("Odd Numbers: ");
+      for(int i:a)
+      {
+        if(i%2==1)
+        {
+          oddc++;
+        }
+      }
+      System.out.println(oddc);
+    }
+}
+//----------------------------------------------------------------------------------------------//
+class eindices
+{
+   public static void main(String args[]) 
+   {
+     int a[]={2, 4, 6, 8, 10};
+     int sum=0;
+     for(int i=0;i<a.length;i++)
+     {
+        if(i%2==0)
+        {
+           sum=sum+a[i];
+        }
+     }
+     System.out.println("sum of elements in even indices: "+sum);
+   } 
+}
+//----------------------------------------------------------------------------------------------------//
+class Frequency
+{
+    public static void main(String args[])
+    {
+       int count=1;
+       int visited=-1;
+       int arr[]={1 ,1,1,6};
+       int visit[] = new int[arr.length];
+
+
+       for(int i=0;i<arr.length;i++)
+       {
+        for(int j=i+1;j<arr.length;j++)
+        {
+           if(arr[i]==arr[j])
+           {
+            count++;
+            visit[j]=visited;
+           } 
+        }
+
+        if(visit[i]!=visited)
+        {
+          visit[i]=count;  
+        }
+        count=1;
+       }
+
+
+       for(int i=0;i<arr.length;i++)
+       {
+        if(visit[i]!=visited)
+        {
+            System.out.println("Element=" + arr[i] + "frequency=" + visit[i]);
+        }
+       }
+       //System.out.println(Arrays.toString(visit));
+    }
+}
+//---------------------------------------------------------------------------------------------------------//
+class dup
+{
+    public static void main(String args[])
+    {
+        int arr[]={123,123,455,1025,1,1};
+        int newArr[]=new int[arr.length];
+        newArr[0]=arr[0];
+        int lengthcount=1;
+        System.out.print(arr[0]+" ");
+        for(int i=1;i<arr.length;i++)
+        {
+            int count=0;
+            for(int j=0;j<arr.length;j++)
+            {
+                if(arr[i]==newArr[j])
+                {
+                    count++;
+                }
+            }
+            if(count==0)
+            {
+                System.out.print(arr[i]+" ");
+                newArr[lengthcount]=arr[i];
+                lengthcount++;
+            }
+        }
+    }
+
+}
+//------------------------------------------------------------------------------------------------------------------//
